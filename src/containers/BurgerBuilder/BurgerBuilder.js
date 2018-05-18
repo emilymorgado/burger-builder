@@ -118,4 +118,10 @@ class BurgerBuilder extends Component {
   }
 }
 
+// The Modal component wraps the OrderSummary
+// This means every time an ingredient changes in OrderSummary,
+// OrderSummary will be re-rendered if it is showing
+// This is an opportunity for a lifecycle hook
+// See: OrderSummary.js
+
 export default BurgerBuilder;

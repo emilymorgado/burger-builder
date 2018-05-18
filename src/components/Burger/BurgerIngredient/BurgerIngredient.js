@@ -38,6 +38,10 @@ class BurgerIngredient extends Component {
   };
 };
 
+// This is the only validation in the project
+// Reminder: this kind of validation requires
+// the component to be stateful
+// so only do this kind of validation when it really makes sense
 BurgerIngredient.propTypes = {
   type: PropTypes.string.isRequired
 }
