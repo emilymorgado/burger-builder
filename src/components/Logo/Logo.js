@@ -12,3 +12,9 @@ const logo = (props) => (
 );
 
 export default logo;
+
+
+// This is a valid solution to making styles media sensitive
+// <div className={classes.Logo} style={{height: props.height}}>
+//   <img src={burgerLogo} alt="MyBurger" />
+// </div>

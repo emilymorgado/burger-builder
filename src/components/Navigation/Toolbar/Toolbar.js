@@ -7,8 +7,10 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 const toolbar = (props) => (
   <header className={classes.Toolbar}>
     <div>MENU</div>
-    <Logo />
-    <nav>
+    <div className={classes.Logo}>
+      <Logo />
+    </div>
+    <nav className={classes.DesktopOnly}>
       <NavigationItems />
     </nav>
 
@@ -16,3 +18,9 @@ const toolbar = (props) => (
 );
 
 export default toolbar;
+
+// This is a valid solution to making styles media sensitive
+// <Logo height="80%" />
+// <nav>
+//   <NavigationItems />
+// </nav>
