@@ -5,6 +5,9 @@ import classes from './Layout.css';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
+// This could be a "container", you could move it there
+// It could also be an hoc
+
 class Layout extends Component {
   state = {
     showSideDrawer: true

@@ -4,7 +4,7 @@ import classes from './Modal.css';
 import Aux from '../../../hoc/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
-const modal = (props) => (
+const Modal = (props) => (
   <Aux>
     <Backdrop show={props.show} clicked={props.modalClosed} />
     <div
@@ -18,4 +18,4 @@ const modal = (props) => (
   </Aux>
 );
 
-export default modal;
+export default Modal;
