@@ -18,13 +18,19 @@ const withErrorHandler = ( WrappedComponent, axios ) => {
     // the child components are rendered
     // This is ok because we aren't causing side effects
     componentWillMount () {
-      axios.interceptors.request.use(req => {
+      this.reqInterceptor = axios.interceptors.request.use(req => {
         this.setState({error: null});
         return req;
       });
-      axios.interceptors.response.use(res => res, error => {
+      this.resInterceptor = axios.interceptors.response.use(res => res, error => {
         this.setState({error: error});
       });
+    }
+
+// This lifecycle hook runs when the component is no longer required
+    componentWillUnmount () {
+      axios.interceptors.request.eject(this.reqInterceptor);
+      axios.interceptors.response.eject(this.resInterceptor);
     }
 
     errorConfirmedHandler = () => {
