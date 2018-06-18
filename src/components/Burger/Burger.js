@@ -1,4 +1,7 @@
 import React from 'react';
+// import { withRouter } from 'react-router-dom'; gives direct access to match, history, location
+// so you don't have to manually pass it on from the top-level component
+// make sure to wrap the export: withRouter(burger)
 
 import classes from './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
