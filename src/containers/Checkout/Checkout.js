@@ -10,7 +10,7 @@ class Checkout extends Component {
     price: 0,
   };
 
-//Changed from componentDidMount to componentWillMount in order to access its props
+  // Changed from componentDidMount to componentWillMount in order to access its props
   componentWillMount() {
     const query = new URLSearchParams(this.props.location.search);
     const ingredients = {};
@@ -43,10 +43,10 @@ class Checkout extends Component {
         <Route
           path={this.props.match.path + '/contact-data'}
           render={(props) => (<ContactData ingredients={this.state.ingredients} price={this.state.totalPrice} {...props} />)} />
-          {/* component={ContactData} /> changed to above so we can pass props to it*/}
       </div>
     )
   }
 };
+// {/* component={ContactData} /> changed to above so we can pass props to it*/}
 
 export default Checkout;
