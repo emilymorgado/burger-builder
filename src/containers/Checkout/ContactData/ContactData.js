@@ -17,7 +17,7 @@ class ContactData extends Component {
   }
 // Have to pass the total price from the burger builder to this component
   orderHandler = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("ContactData.js", this.props.ingredients)
     this.setState({ loading: true });
     const order = {
@@ -34,6 +34,7 @@ class ContactData extends Component {
       },
       deliveryMethod: 'fastest',
     };
+    console.log("ContactData.js", order)
     // orders.json is Firebase syntax
     axios.post('/orders.json', order)
       .then(response => {
