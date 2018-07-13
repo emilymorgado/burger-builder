@@ -83,12 +83,11 @@ class ContactData extends Component {
         elementType: 'select',
         elementConfig: {
           options: [
-            {value: 'none', dispalyValue: 'Do not select'},
             {value: 'urgent', dispalyValue: 'Fastest'},
             {value: 'cheapest', dispalyValue: 'Cheapest'},
           ]
         },
-        value: '',
+        value: 'fastest',
         validation: {},
         valid: true,
       },
@@ -98,6 +97,7 @@ class ContactData extends Component {
 // Have to pass the total price from the burger builder to this component
   orderHandler = (event) => {
     event.preventDefault();  // preventing page reload from request sending
+
     const formData = {};
     for (let formElementIdentifier in this.state.orderForm) {
       formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
@@ -113,6 +113,9 @@ class ContactData extends Component {
 
   checkValidity(value, rules) {
     let isValid = true;
+    if (!rules) {
+      return true;
+    }
 
     if (rules.required) {
       isValid = value.trim() !== '' && isValid;
@@ -189,9 +192,9 @@ class ContactData extends Component {
 
 const mapStateToProps = state => {
   return {
-    ings: state.ingredients,
-    price: state.totalPrice,
-    loading: state.loading,
+    ings: state.burgerBuilder.ingredients,
+    price: state.burgerBuilder.totalPrice,
+    loading: state.order.loading,
   }
 }
 
