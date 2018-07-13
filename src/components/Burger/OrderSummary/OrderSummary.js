@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
 
-class orderSummary extends Component {
+class OrderSummary extends Component {
 
 // We can see here that it is updating unneccesarily because of Modal
 // We can change Modal to a Class component
@@ -28,11 +28,11 @@ class orderSummary extends Component {
           {ingredientSummary}
         </ul>
         <p><strong>Total Price: {this.props.price.toFixed(2)}</strong></p>
-        <Button btnType="Danger" clicked={this.props.purchaseCanceled}>CANCEL</Button>
+        <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL</Button>
         <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
       </Aux>
     )
   }
 }
 
-export default orderSummary;
+export default OrderSummary;
