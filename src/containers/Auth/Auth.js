@@ -7,7 +7,7 @@ import Button from '../../components/UI/Button/Button';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
-import { updateObject, checkValidity } from '../../../shared/utility';
+import { updateObject, checkValidity } from '../../shared/utility';
 
 class Auth extends Component {
   state = {
@@ -56,7 +56,7 @@ class Auth extends Component {
         value: event.target.value,
         valid: checkValidity(event.target.value, this.state.controls[controlName].validation),
         touched: true,
-      });
+      })
     });
     this.setState({controls: updatedControls});
   }

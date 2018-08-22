@@ -10,9 +10,10 @@ class OrderSummary extends Component {
 // and test shouldComponentUpdate and WillUpdate
 // This actually will end up improving performance
 // OrderSummary should be a functional component
-  componentWillUpdate() {
-    console.log('[OrderSummary] WillUpdate');
-  }
+  // componentWillUpdate() {
+  //   console.log('[OrderSummary] WillUpdate');
+  // }
+
   render () {
     const ingredientSummary = Object.keys(this.props.ingredients)
       .map(ingredKey => {
